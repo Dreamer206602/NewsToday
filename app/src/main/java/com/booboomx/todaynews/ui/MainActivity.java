@@ -1,7 +1,9 @@
-package com.booboomx.todaynews;
+package com.booboomx.todaynews.ui;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.booboomx.todaynews.R;
 
 public class MainActivity extends AppCompatActivity {
 
