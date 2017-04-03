@@ -8,13 +8,13 @@
 * [RxJava](https://github.com/ReactiveX/RxJava)
 
 
-* [compile 'io.reactivex:rxjava:+']
-* [compile 'com.trello:rxlifecycle:+']
-* [compile 'com.trello:rxlifecycle-components:+']
-* [compile 'com.squareup.retrofit:adapter-rxjava:+']
-* [compile 'com.squareup.retrofit2:retrofit:+']
-* [compile 'com.squareup.retrofit2:converter-gson:+']
-* [compile 'com.squareup.retrofit2:adapter-rxjava:+']
+<!-- * [compile 'io.reactivex:rxjava:+'] -->
+<!-- * [compile 'com.trello:rxlifecycle:+'] -->
+<!-- * [compile 'com.trello:rxlifecycle-components:+'] -->
+<!-- * [compile 'com.squareup.retrofit:adapter-rxjava:+'] -->
+<!-- * [compile 'com.squareup.retrofit2:retrofit:+'] -->
+<!-- * [compile 'com.squareup.retrofit2:converter-gson:+'] -->
+<!-- * [compile 'com.squareup.retrofit2:adapter-rxjava:+'] -->
 
 ### RecyclerView万能适配器
 * [BaseRecyclerViewAdapterHelper](https://github.com/CymChad/BaseRecyclerViewAdapterHelper)
