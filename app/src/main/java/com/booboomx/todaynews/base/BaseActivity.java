@@ -37,8 +37,15 @@ public abstract class BaseActivity extends AppCompatActivity {
         processLogic(savedInstanceState);
 
 
+        setListener();
+
+
+
+
 
     }
+
+    protected abstract void setListener();
 
 
     @Override

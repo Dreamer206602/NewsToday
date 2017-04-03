@@ -3,7 +3,7 @@ package com.booboomx.todaynews.utils;
 import android.content.Context;
 import android.content.Intent;
 
-import com.booboomx.todaynews.ui.MainActivity;
+import com.booboomx.todaynews.ui.activity.MainActivity;
 
 /**
  * Created by booboomx on 17/4/2.

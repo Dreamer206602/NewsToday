@@ -27,6 +27,11 @@ public class WelcomeActivity extends BaseActivity {
     public static final String URL="http://www.3vsheji.com/uploads/allimg/151222/1F92594D_0.jpg";
 
     @Override
+    protected void setListener() {
+
+    }
+
+    @Override
     public void processLogic(Bundle savedInstanceState) {
 
         mCountDownView.start();
@@ -41,8 +46,6 @@ public class WelcomeActivity extends BaseActivity {
             @Override
             public void onFinishCount() {
                 JumpUtils.go2MainActivity(WelcomeActivity.this);
-
-
             }
         });
 
