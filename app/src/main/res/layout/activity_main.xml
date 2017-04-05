@@ -9,14 +9,15 @@
 
     <com.booboomx.todaynews.widget.UnScrollViewPager
         android:id="@+id/viewPager"
-        android:paddingBottom="40dp"
         android:background="@android:color/transparent"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:layout_above="@+id/tab_rg_menu"/>
 
 
 
     <RadioGroup
+        android:gravity="center"
         android:orientation="horizontal"
         android:layout_alignParentBottom="true"
         android:id="@+id/tab_rg_menu"

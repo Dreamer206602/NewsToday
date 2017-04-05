@@ -11,7 +11,6 @@
 
 
     <ImageView
-        android:layout_marginTop="5dp"
         android:scaleType="fitXY"
         android:layout_marginBottom="20dp"
         android:layout_above="@+id/img_toutiao"
@@ -42,11 +41,5 @@
         app:background_color="#22000000"
         android:layout_width="50dp"
         android:layout_height="50dp"/>
-
-
-
-
-
-
 
 </RelativeLayout>

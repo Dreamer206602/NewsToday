@@ -1,9 +1,12 @@
 package com.booboomx.todaynews.base;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+
+import com.jaeger.library.StatusBarUtil;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -34,9 +37,10 @@ public abstract class BaseActivity extends AppCompatActivity {
 
         setContentView(getLayoutId());
         mUnbinder=ButterKnife.bind(this);
+
+        StatusBarUtil.setColor(this, Color.RED);
+
         processLogic(savedInstanceState);
-
-
         setListener();
 
 
