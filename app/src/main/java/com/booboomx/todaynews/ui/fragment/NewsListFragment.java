@@ -56,6 +56,10 @@ public class NewsListFragment extends BaseFragment<NewListPresenter> implements 
         mSwipeRefresh.setOnRefreshListener(this);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
+        //手动调用,通知系统去测量
+        mSwipeRefresh.measure(0, 0);
+        mSwipeRefresh.setRefreshing(true);
+
 
         if (TextUtils.isEmpty(titleCode))
             titleCode = getArguments().getString(ConstanceValue.DATA);
@@ -69,7 +73,7 @@ public class NewsListFragment extends BaseFragment<NewListPresenter> implements 
     @Override
     public void onRefresh() {
 
-        Subscription subscription= Observable.timer(1000, TimeUnit.MILLISECONDS)
+        Subscription subscription = Observable.timer(1000, TimeUnit.MILLISECONDS)
                 .compose(RxUtils.<Long>rxSchedulerHelper())
                 .subscribe(new Action1<Long>() {
                     @Override
@@ -86,15 +90,16 @@ public class NewsListFragment extends BaseFragment<NewListPresenter> implements 
                 });
 
 
-
-
     }
 
 
     @Override
     public void onGetNewsListSuccess(List<NewsBean> dataBeanList) {
 
-        mAdapter=new NewListAdapter(dataBeanList);
+        if(mSwipeRefresh.isRefreshing()){
+            mSwipeRefresh.setRefreshing(false);
+        }
+        mAdapter = new NewListAdapter(dataBeanList);
         mRecyclerView.setAdapter(mAdapter);
 
 

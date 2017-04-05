@@ -22,3 +22,7 @@
 
 ### JieCaoVideoPlayer
 * [JieCaoVideoPlayer](https://github.com/lipangit/JieCaoVideoPlayer)
+
+
+## 实现SwipeRefreshLayout首次进入自动刷新
+* [实现SwipeRefreshLayout首次进入自动刷新](http://www.jianshu.com/p/8875a05c54ef)
