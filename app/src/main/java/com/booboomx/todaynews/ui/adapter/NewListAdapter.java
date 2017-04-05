@@ -1,17 +1,23 @@
 package com.booboomx.todaynews.ui.adapter;
 
 import android.text.TextUtils;
+import android.util.Log;
 import android.widget.ImageView;
 
 import com.booboomx.todaynews.R;
 import com.booboomx.todaynews.model.ImageUrl;
 import com.booboomx.todaynews.model.NewsBean;
+import com.booboomx.todaynews.model.Video;
 import com.booboomx.todaynews.utils.DateUtils;
 import com.booboomx.todaynews.utils.ImageLoaderUtils;
+import com.booboomx.todaynews.utils.VideoPathDecoder;
 import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 
 import java.util.List;
+
+import fm.jiecao.jcvideoplayer_lib.JCVideoPlayer;
+import fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard;
 
 /**
  * Created by booboomx on 17/4/5.
@@ -29,7 +35,7 @@ public class NewListAdapter extends BaseMultiItemQuickAdapter<NewsBean, BaseView
     }
 
     @Override
-    protected void convert(BaseViewHolder holder, NewsBean item) {
+    protected void convert(BaseViewHolder holder, final NewsBean item) {
 
         String title = item.getTitle();//标题
         List<ImageUrl> image_list =
@@ -125,10 +131,47 @@ public class NewListAdapter extends BaseMultiItemQuickAdapter<NewsBean, BaseView
 
                 holder.setText(R.id.tvFrom,source)
                         .setText(R.id.tvCommentCount,comments_count+"");
+
+                final JCVideoPlayerStandard videoPlayer = holder.getView(R.id.videoPlayer);
+
+
+                videoPlayer.titleTextView.setText(title);
+
+                if(!TextUtils.isEmpty(image_url)){
+                    ImageLoaderUtils.loadImge(mContext,image_url,videoPlayer.thumbImageView);
+                }
+
+//                videoPlayer.setDurationText(video_duration_str);
+                if (item.video == null) {
+                    //由于地址加密，所以抽出一个类专门解析播放地址
+                    VideoPathDecoder decoder = new VideoPathDecoder() {
+                        @Override
+                        public void onSuccess(Video s) {
+                            item.video = s;
+                            setPlayer(videoPlayer, item);
+                        }
+
+                        @Override
+                        public void onDecodeError(Throwable e) {
+
+                        }
+                    };
+                    decoder.decodePath(item.source_url);
+                } else {
+                    setPlayer(videoPlayer, item);
+                }
+
+
+
                 break;
 
 
         }
 
+    }
+
+    private void setPlayer(JCVideoPlayerStandard videoPlayer, NewsBean news) {
+        Log.i(TAG, "setPlayer: "+news.video.main_url);
+        videoPlayer.setUp(news.video.main_url, JCVideoPlayer.SCREEN_LAYOUT_LIST, news.title);
     }
 }

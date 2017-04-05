@@ -18,3 +18,7 @@
 
 ### Glide Transformations
 * [Glide Transformations](https://github.com/wasabeef/glide-transformations)
+
+
+### JieCaoVideoPlayer
+* [JieCaoVideoPlayer](https://github.com/lipangit/JieCaoVideoPlayer)

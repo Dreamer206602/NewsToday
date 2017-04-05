@@ -2,11 +2,13 @@ package com.booboomx.todaynews.net;
 
 import com.booboomx.todaynews.model.NewsBean;
 import com.booboomx.todaynews.model.ResultResponse;
+import com.booboomx.todaynews.model.VideoModel;
 
 import java.util.List;
 
 import retrofit2.http.GET;
 import retrofit2.http.Query;
+import retrofit2.http.Url;
 import rx.Observable;
 
 /**
@@ -33,6 +35,21 @@ public interface ApiService {
     Observable<ResultResponse<List<NewsBean>>> getNews(@Query("category") String category);
 
 
+
+    /**
+     * 获取视频页的html代码
+     */
+    @GET
+    Observable<String> getVideoHtml(@Url String url);
+
+
+    /**
+     * 获取视频数据json
+     * @param url
+     * @return
+     */
+    @GET
+    Observable<ResultResponse<VideoModel>> getVideoData(@Url String url);
 
 
 }

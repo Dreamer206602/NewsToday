@@ -5,7 +5,7 @@ android {
     buildToolsVersion "25.0.2"
     defaultConfig {
         applicationId "com.booboomx.todaynews"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -44,6 +44,9 @@ dependencies {
     compile 'jp.wasabeef:glide-transformations:2.0.2'
     // If you want to use the GPU Filters
     compile 'jp.co.cyberagent.android.gpuimage:gpuimage-library:1.4.1'
+
+
+    compile 'fm.jiecao:jiecaovideoplayer:5.5.2'
 
     compile 'com.android.support:support-v4:25.1.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
