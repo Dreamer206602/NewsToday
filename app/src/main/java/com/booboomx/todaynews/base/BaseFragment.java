@@ -130,6 +130,10 @@ public abstract class BaseFragment<P extends BasePresenter> extends Fragment {
         hasFetchData=false;
         isViewPrepared=false;
 
+        if (mUnbinder != null) {
+            mUnbinder.unbind();
+        }
+
         if (mvpPresenter != null) {
             mvpPresenter.detachView();
         }
@@ -147,9 +151,7 @@ public abstract class BaseFragment<P extends BasePresenter> extends Fragment {
     public void onDestroy() {
         super.onDestroy();
 
-        if (mUnbinder != null) {
-            mUnbinder.unbind();
-        }
+
 
     }
 
@@ -204,6 +206,8 @@ public abstract class BaseFragment<P extends BasePresenter> extends Fragment {
 
 
     protected  void initView(LayoutInflater inflater){
+
+
 
     }
 

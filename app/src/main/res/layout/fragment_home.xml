@@ -1,13 +1,76 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:tools="http://schemas.android.com/tools"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             tools:context="com.booboomx.todaynews.ui.fragment.HomeFragment">
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/feed_top_search_hint"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@drawable/search_background"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:text="@string/feed_search_tip"
+            android:textColor="@color/black"
+            android:textSize="14sp"/>
+    </LinearLayout>
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment"/>
+        android:layout_height="35dp">
 
-</FrameLayout>
+
+
+
+        <!--            android:background="?attr/main_bg"-->
+        <!--            app:ctTabTextColor="?attr/font_color"-->
+        <com.booboomx.todaynews.widget.colortrackview.ColorTrackTabViewIndicator
+            android:background="@color/white_translucent"
+            android:id="@+id/indicator"
+            app:ctTabTextColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            app:ctMode="scrollable"
+            app:ctTabSelectedTextColor="@color/ssxinhongse1"
+            app:ctTabTextSize="16sp"
+            app:ctTabWidth="50dp"
+            app:isColorUi="true"/>
+
+        <ImageView
+            android:id="@+id/iv_category"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/shadow_add_titlebar_new"
+            android:paddingLeft="5dp"
+            android:scaleType="center"
+            android:src="@drawable/ic_category_expand"
+            app:isColorUi="true"
+            />
+    </RelativeLayout>
+
+    <!--        android:background="?attr/divider_light_grey"-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        app:isColorUi="true"
+        />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

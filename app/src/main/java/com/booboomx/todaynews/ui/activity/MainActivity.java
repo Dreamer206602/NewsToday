@@ -13,7 +13,7 @@ import com.booboomx.todaynews.ui.fragment.ConcernFragment;
 import com.booboomx.todaynews.ui.fragment.HomeFragment;
 import com.booboomx.todaynews.ui.fragment.MineFragment;
 import com.booboomx.todaynews.ui.fragment.VideoFragment;
-import com.booboomx.todaynews.view.UnScrollViewPager;
+import com.booboomx.todaynews.widget.UnScrollViewPager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +25,7 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
 
     @BindView(R.id.viewPager)
     UnScrollViewPager mViewPager;
+    @BindView(R.id.tab_rg_menu)
     RadioGroup mTabRgMenu;
 
     private MyFragmentPagerAdapter mPagerAdapter;
@@ -104,7 +105,6 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
                 break;
             case R.id.tab_rb_4:
                 mViewPager.setCurrentItem(3, false);
-
                 break;
         }
 

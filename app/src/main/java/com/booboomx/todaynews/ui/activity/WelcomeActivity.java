@@ -7,7 +7,7 @@ import com.booboomx.todaynews.R;
 import com.booboomx.todaynews.base.BaseActivity;
 import com.booboomx.todaynews.utils.ImageLoaderUtils;
 import com.booboomx.todaynews.utils.JumpUtils;
-import com.booboomx.todaynews.view.CountDownView;
+import com.booboomx.todaynews.widget.CountDownView;
 
 import butterknife.BindView;
 import butterknife.OnClick;

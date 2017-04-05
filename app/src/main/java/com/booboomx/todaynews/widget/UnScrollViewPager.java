@@ -1,4 +1,4 @@
-package com.booboomx.todaynews.view;
+package com.booboomx.todaynews.widget;
 
 import android.content.Context;
 import android.support.v4.view.ViewPager;

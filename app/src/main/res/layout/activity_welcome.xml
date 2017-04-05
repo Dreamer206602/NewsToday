@@ -30,7 +30,7 @@
 
 
 
-    <com.booboomx.todaynews.view.CountDownView
+    <com.booboomx.todaynews.widget.CountDownView
         android:id="@+id/countDownView"
         android:layout_margin="20dp"
         app:border_width="2dp"
