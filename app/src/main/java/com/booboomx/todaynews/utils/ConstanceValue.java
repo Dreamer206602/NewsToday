@@ -11,7 +11,9 @@ public interface ConstanceValue {
     String ARTICLE_GENRE_VIDEO = "video";
     String ARTICLE_GENRE_ARTICLE = "article";
     String URL = "url";
+    String TITLE="title";
     String SP_THEME = "theme";
+    String IMAGE="image";
     int THEME_LIGHT = 1;
     int THEME_NIGHT = 2;
     /**

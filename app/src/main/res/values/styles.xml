@@ -51,4 +51,18 @@
         <item name="android:textSize">16sp</item>
     </style>
 
+
+    <style name="title_bar_style">
+        <item name="android:background">@drawable/bg_titlebar</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">@dimen/title_bar_height</item>
+    </style>
+
+    <style name="topic_title_back_image">
+        <item name="android:paddingLeft">10.0dip</item>
+        <item name="android:paddingRight">8.0dip</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:src">@drawable/leftbackicon_titlebar</item>
+    </style>
 </resources>

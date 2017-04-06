@@ -2,6 +2,7 @@ package com.booboomx.todaynews.ui.adapter;
 
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 
 import com.booboomx.todaynews.R;
@@ -10,6 +11,7 @@ import com.booboomx.todaynews.model.NewsBean;
 import com.booboomx.todaynews.model.Video;
 import com.booboomx.todaynews.utils.DateUtils;
 import com.booboomx.todaynews.utils.ImageLoaderUtils;
+import com.booboomx.todaynews.utils.JumpUtils;
 import com.booboomx.todaynews.utils.VideoPathDecoder;
 import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
@@ -37,10 +39,10 @@ public class NewListAdapter extends BaseMultiItemQuickAdapter<NewsBean, BaseView
     @Override
     protected void convert(BaseViewHolder holder, final NewsBean item) {
 
-        String title = item.getTitle();//标题
+        final String title = item.getTitle();//标题
         List<ImageUrl> image_list =
                 item.getImage_list();
-        String source = item.getSource();//来源
+        final String source = item.getSource();//来源
         String image_url = item.getImage_url();
         String video_duration_str = item.getVideo_duration_str();//视频播放时长
 
@@ -48,6 +50,7 @@ public class NewListAdapter extends BaseMultiItemQuickAdapter<NewsBean, BaseView
         int comments_count = item.getComments_count();//评论个数
         long behot_time = item.getBehot_time();//时间
 
+        final String source_url = item.getSource_url();
 
         String media_avatar_url = item.getMedia_avatar_url();//媒体图片头像
 
@@ -64,6 +67,17 @@ public class NewListAdapter extends BaseMultiItemQuickAdapter<NewsBean, BaseView
                 if(!TextUtils.isEmpty(image_url)){
                     ImageLoaderUtils.loadImge(mContext,image_url,ivRightImage);
                 }
+
+
+                holder.getView(R.id.cardView)
+                        .setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+
+                                JumpUtils.go2NewsDetailActivity(mContext,source,"http://m.toutiao.com".concat(source_url));
+                            }
+                        });
+
 
                 break;
             case NewsBean.ARTICLE_IMAGE:
@@ -87,6 +101,15 @@ public class NewListAdapter extends BaseMultiItemQuickAdapter<NewsBean, BaseView
                 }
 
 
+                holder.getView(R.id.cardView)
+                        .setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+
+                                JumpUtils.go2NewsDetailActivity(mContext,source,"http://m.toutiao.com".concat(source_url));
+                            }
+                        });
+
                 break;
             case NewsBean.GALLERY_NO_IMAGE:
                 holder.setText(R.id.tv_title,title)
@@ -108,6 +131,16 @@ public class NewListAdapter extends BaseMultiItemQuickAdapter<NewsBean, BaseView
 
                 }
 
+
+                holder.getView(R.id.cardView)
+                        .setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+
+                                JumpUtils.go2NewsDetailActivity(mContext,source,"http://m.toutiao.com".concat(source_url));
+                            }
+                        });
+
                 break;
             case NewsBean.GALLERY_IMGE:
                 holder.setText(R.id.tv_title,title)
@@ -121,6 +154,16 @@ public class NewListAdapter extends BaseMultiItemQuickAdapter<NewsBean, BaseView
                     ImageLoaderUtils.loadImge(mContext,image_list.get(0).getUrl(), (ImageView) holder.getView(R.id.ivBigImg));
 
                 }
+
+
+                holder.getView(R.id.cardView)
+                        .setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+
+                                JumpUtils.go2NewsDetailActivity(mContext,source,"http://m.toutiao.com".concat(source_url));
+                            }
+                        });
 
                 break;
             case NewsBean.VIDEO:

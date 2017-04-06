@@ -6,6 +6,7 @@
                                     app:cardBackgroundColor="@color/white"
                                     app:cardCornerRadius="8dp"
                                     app:cardElevation="3dp"
+                                    android:id="@+id/cardView"
                                     app:cardUseCompatPadding="true"
                                     app:cardPreventCornerOverlap="true"
     >
