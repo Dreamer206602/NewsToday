@@ -3,9 +3,17 @@
                                     xmlns:app="http://schemas.android.com/apk/res-auto"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+
+                                    android:layout_marginTop="3dp"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_marginRight="8dp"
+
                                     app:cardBackgroundColor="@color/white"
-                                    app:cardCornerRadius="8dp"
-                                    app:cardElevation="3dp"
+                                    app:contentPadding="8dp"
+                                    app:cardCornerRadius="10dp"
+                                    app:cardElevation="10dp"
+
+
                                     android:id="@+id/cardView"
                                     app:cardUseCompatPadding="true"
                                     app:cardPreventCornerOverlap="true"

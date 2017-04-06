@@ -5,11 +5,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+
+    android:layout_marginTop="3dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+
     app:cardBackgroundColor="@color/white"
-    app:cardElevation="8dp"
+    app:contentPadding="8dp"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="10dp"
+
     app:cardPreventCornerOverlap="true"
     app:cardUseCompatPadding="true"
-    app:cardCornerRadius="8dp"
     >
 
     <LinearLayout
@@ -20,9 +27,10 @@
         <fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard
             android:id="@+id/videoPlayer"
             android:layout_width="match_parent"
-            android:layout_height="200dp"/>
+            android:layout_height="160dp"/>
 
         <LinearLayout
+            android:layout_marginTop="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
