@@ -1,13 +1,33 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:tools="http://schemas.android.com/tools"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             tools:context="com.booboomx.todaynews.ui.fragment.VideoFragment">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              tools:context="com.booboomx.todaynews.ui.fragment.VideoFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <com.booboomx.todaynews.widget.colortrackview.ColorTrackTabViewIndicator
+        android:id="@+id/indicator"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment"/>
+        android:layout_height="45dp"
+        android:background="@color/white_translucent_20"
+        app:ctMode="scrollable"
+        app:ctTabSelectedTextColor="@color/ssxinhongse1"
+        app:ctTabTextColor="@color/black"
+        app:ctTabTextSize="16sp"
+        app:ctTabWidth="60dp"
+        />
 
-</FrameLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+</LinearLayout>
