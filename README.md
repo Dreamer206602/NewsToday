@@ -26,3 +26,11 @@
 
 ## 实现SwipeRefreshLayout首次进入自动刷新
 * [实现SwipeRefreshLayout首次进入自动刷新](http://www.jianshu.com/p/8875a05c54ef)
+
+
+##  RecyclerView 加上折叠的效果
+* [ RecyclerView 加上折叠的效果](http://www.jianshu.com/p/7ddb265f6250)
+
+
+
+[Android 系特性控件介绍](MaterialDesign.md)

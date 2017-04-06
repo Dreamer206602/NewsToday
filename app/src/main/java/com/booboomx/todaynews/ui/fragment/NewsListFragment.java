@@ -2,8 +2,6 @@ package com.booboomx.todaynews.ui.fragment;
 
 
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 
 import com.booboomx.todaynews.R;
@@ -14,7 +12,9 @@ import com.booboomx.todaynews.ui.adapter.NewListAdapter;
 import com.booboomx.todaynews.ui.view.NewListView;
 import com.booboomx.todaynews.utils.ConstanceValue;
 import com.booboomx.todaynews.utils.RxUtils;
+import com.booboomx.todaynews.widget.ParallaxRecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -30,12 +30,14 @@ public class NewsListFragment extends BaseFragment<NewListPresenter> implements 
 
 
     @BindView(R.id.recyclerView)
-    RecyclerView mRecyclerView;
+    ParallaxRecyclerView mRecyclerView;
     @BindView(R.id.swipeRefresh)
     SwipeRefreshLayout mSwipeRefresh;
 
     private String titleCode;
     private NewListAdapter mAdapter;
+    protected List<NewsBean> mDatas = new ArrayList<>();
+
 
     @Override
     public int getFragmentLayout() {
@@ -54,11 +56,15 @@ public class NewsListFragment extends BaseFragment<NewListPresenter> implements 
 
 
         mSwipeRefresh.setOnRefreshListener(this);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+//        mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         //手动调用,通知系统去测量
         mSwipeRefresh.measure(0, 0);
         mSwipeRefresh.setRefreshing(true);
+
+
+        mAdapter = new NewListAdapter(mDatas);
+        mRecyclerView.setAdapter(mAdapter);
 
 
         if (TextUtils.isEmpty(titleCode))
@@ -78,7 +84,7 @@ public class NewsListFragment extends BaseFragment<NewListPresenter> implements 
                 .subscribe(new Action1<Long>() {
                     @Override
                     public void call(Long aLong) {
-
+                        mvpPresenter.getNewsList(titleCode);
                         mSwipeRefresh.setRefreshing(false);
 
                     }
@@ -93,14 +99,24 @@ public class NewsListFragment extends BaseFragment<NewListPresenter> implements 
     }
 
 
+//    @Override
+//    public void onPause() {
+//        super.onPause();
+//        JCVideoPlayer.releaseAllVideos();
+//    }
+
+
     @Override
     public void onGetNewsListSuccess(List<NewsBean> dataBeanList) {
-
-        if(mSwipeRefresh.isRefreshing()){
+        mDatas.clear();
+        if (mSwipeRefresh.isRefreshing()) {
             mSwipeRefresh.setRefreshing(false);
         }
-        mAdapter = new NewListAdapter(dataBeanList);
-        mRecyclerView.setAdapter(mAdapter);
+        //由于最后一条重复 ，删除掉
+        if (dataBeanList.size() > 0)
+            dataBeanList.remove(dataBeanList.size() - 1);
+        mDatas.addAll(0, dataBeanList);
+        mAdapter.notifyItemRangeChanged(0, dataBeanList.size());
 
 
     }

@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import fm.jiecao.jcvideoplayer_lib.JCVideoPlayer;
 
 public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedChangeListener {
 
@@ -39,6 +40,7 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
         mViewPager.setScrollable(false);//禁止左右滑动
         mPagerAdapter = new MyFragmentPagerAdapter(getSupportFragmentManager(), fragments);
 
+
         mViewPager.setAdapter(mPagerAdapter);
         mViewPager.setCurrentItem(0);
         mViewPager.setOffscreenPageLimit(fragments.size());
@@ -46,6 +48,22 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
 
     }
 
+
+    @Override
+    public void onBackPressed() {
+        if (JCVideoPlayer.backPress()) {
+            return;
+        }
+        super.onBackPressed();
+    }
+
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        JCVideoPlayer.releaseAllVideos();
+
+    }
 
     @Override
     protected void setListener() {

@@ -204,8 +204,6 @@ public class NewListAdapter extends BaseMultiItemQuickAdapter<NewsBean, BaseView
                     setPlayer(videoPlayer, item);
                 }
 
-
-
                 break;
 
 
