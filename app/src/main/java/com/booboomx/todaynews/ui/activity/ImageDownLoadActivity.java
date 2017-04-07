@@ -2,25 +2,35 @@ package com.booboomx.todaynews.ui.activity;
 
 import android.animation.Animator;
 import android.animation.ValueAnimator;
+import android.media.MediaScannerConnection;
 import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
 import android.support.v7.widget.AppCompatImageView;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.booboomx.todaynews.R;
+import com.booboomx.todaynews.app.BaseApplication;
 import com.booboomx.todaynews.base.BaseActivity;
+import com.booboomx.todaynews.net.downloadImage.DownLoadSubscribe;
+import com.booboomx.todaynews.net.downloadImage.ObservableProvider;
 import com.booboomx.todaynews.utils.ConstanceValue;
+import com.booboomx.todaynews.utils.FileUtils;
 import com.booboomx.todaynews.utils.ImageLoaderUtils;
+import com.booboomx.todaynews.utils.SnackBarUtils;
 import com.booboomx.todaynews.widget.FixMultiViewPager;
 import com.wingsofts.dragphotoview.DragPhotoView;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 public class ImageDownLoadActivity extends BaseActivity {
 
@@ -29,6 +39,9 @@ public class ImageDownLoadActivity extends BaseActivity {
     FixMultiViewPager mViewPager;
     @BindView(R.id.tv_index)
     TextView mTvIndex;
+
+    @BindView(R.id.rl_bottom)
+    RelativeLayout mRlBottom;
     @BindView(R.id.iv_download)
     AppCompatImageView mIvDownload;
     private String image;
@@ -51,6 +64,52 @@ public class ImageDownLoadActivity extends BaseActivity {
     private float mTranslationX;
     private float mTranslationY;
 
+
+    @OnClick(R.id.iv_download)
+    public void onClick(){
+
+        downloadPicture(0);
+
+    }
+
+    private String mSavePath;
+    public static final String TAG=ImageDownLoadActivity.class.getSimpleName();
+    private void downloadPicture(final  int action) {
+
+        mSavePath = FileUtils.getSaveImagePath(this) + File.separator + FileUtils.getFileName(image)+".jpg";
+        Log.i(TAG, "downloadPicture: imgUrl->"+image);
+        Log.i(TAG, "downloadPicture: mSavePath->"+mSavePath);
+
+        ObservableProvider.getDefault().download(image+".jpg", new DownLoadSubscribe(FileUtils.getSaveImagePath(this), FileUtils.getFileName(image+".jpg")) {
+            @Override
+            public void onCompleted(File file) {
+                if (action == 0) {
+                    SnackBarUtils.makeLong(mRlBottom, "已保存至相册").info();
+                    MediaScannerConnection.scanFile(BaseApplication.getInstance(), new String[]{
+                                    mSavePath},
+                            null, null);
+                } else {
+//                    SystemShareUtils.shareImage(PictureDownLoadActivity.this, Uri.parse(file.getAbsolutePath()));
+                }
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                if (action == 0)
+                    SnackBarUtils.makeLong(mRlBottom, "保存失败:" + e).danger();
+            }
+
+            @Override
+            public void onProgress(double progress, long downloadByte, long totalByte) {
+                Log.i(TAG, "totalByte:" + totalByte + " downloadedByte:" + downloadByte + " progress:" + progress);
+
+            }
+        });
+
+    }
+
+
+
     @Override
     protected void setListener() {
 
@@ -58,6 +117,7 @@ public class ImageDownLoadActivity extends BaseActivity {
 
     @Override
     public void processLogic(Bundle savedInstanceState) {
+        mTvIndex.setText("1/1");
         image=getIntent().getStringExtra(ConstanceValue.IMAGE);
         mList.add("path");
         mPhotoViews = new DragPhotoView[mList.size()];
