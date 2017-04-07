@@ -57,7 +57,7 @@ public class ProgressWebView extends WebView {
                         + "var objs = document.getElementsByTagName(\"img\"); "
                         + "for(var i=0;i<objs.length;i++)  " + "{"
                         + "    objs[i].onclick=function()  " + "    {  "
-                        + "        window.imagelistner.openImage(this.src);  "
+                        + "        window.imagelistner.openImage(this.src,this.width,this.height);  "
                         + "    }  " + "}" + "})()");
 
 

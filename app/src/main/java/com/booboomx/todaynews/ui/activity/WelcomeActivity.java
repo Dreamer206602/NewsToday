@@ -63,6 +63,7 @@ public class WelcomeActivity extends FragmentActivity {
             @Override
             public void onFinishCount() {
                 JumpUtils.go2MainActivity(WelcomeActivity.this);
+                finish();
             }
         });
 
@@ -73,6 +74,7 @@ public class WelcomeActivity extends FragmentActivity {
     @OnClick(R.id.countDownView)
     public void Click(){
         JumpUtils.go2MainActivity(WelcomeActivity.this);
+        finish();
 
     }
 

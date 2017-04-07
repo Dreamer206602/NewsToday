@@ -16,6 +16,7 @@ public class JumpUtils {
         Intent intent=new Intent();
         intent.setClass(context, MainActivity.class);
         context.startActivity(intent);
+
     }
 
 

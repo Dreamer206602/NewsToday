@@ -14,6 +14,10 @@ public interface ConstanceValue {
     String TITLE="title";
     String SP_THEME = "theme";
     String IMAGE="image";
+    String WIDTH="width";
+    String HEIGHT="height";
+    String LEFT="left";
+    String TOP="top";
     int THEME_LIGHT = 1;
     int THEME_NIGHT = 2;
     /**

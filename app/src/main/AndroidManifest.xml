@@ -33,9 +33,13 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activity.NewsDetailActivity">
+        <activity android:name=".ui.activity.NewsDetailActivity"
+            android:theme="@style/NewsDetailTheme"
+            >
         </activity>
-        <activity android:name=".ui.activity.ImageDownLoadActivity">
+        <activity android:name=".ui.activity.ImageDownLoadActivity"
+            android:theme="@style/PictureDownLoadTheme"
+            >
         </activity>
     </application>
 

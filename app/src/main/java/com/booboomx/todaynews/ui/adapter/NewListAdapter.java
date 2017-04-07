@@ -27,6 +27,7 @@ import fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard;
 
 public class NewListAdapter extends BaseMultiItemQuickAdapter<NewsBean, BaseViewHolder> {
 
+    public static final String TAG=NewListAdapter.class.getSimpleName();
     public NewListAdapter(List<NewsBean> data) {
         super(data);
         addItemType(NewsBean.ARTICLE_NO_IMAGE, R.layout.item_article_no_image);
@@ -53,6 +54,11 @@ public class NewListAdapter extends BaseMultiItemQuickAdapter<NewsBean, BaseView
         final String source_url = item.getSource_url();
 
         String media_avatar_url = item.getMedia_avatar_url();//媒体图片头像
+
+
+        String concat = "http://m.toutiao.com".concat(source_url);
+
+        Log.i(TAG, "convert: concat-->"+concat);
 
 
         switch (holder.getItemViewType()) {
