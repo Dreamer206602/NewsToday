@@ -58,7 +58,6 @@ public abstract class VideoPathDecoder {
                             crc32.update(s.getBytes());
                             String crcString = crc32.getValue() + "";
                             String url = ApiService.HOST_VIDEO + s + "&s=" + crcString;
-//                            Logger.i(url);
                             Log.i(TAG, "call: "+url);
 
                             return AppClient.getApiService().getVideoData(url);

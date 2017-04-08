@@ -6,6 +6,7 @@ import com.booboomx.todaynews.base.BasePresenter;
 import com.booboomx.todaynews.model.NewsBean;
 import com.booboomx.todaynews.model.ResultResponse;
 import com.booboomx.todaynews.net.AppClient;
+import com.booboomx.todaynews.net.RetryWhenProcess;
 import com.booboomx.todaynews.ui.view.NewListView;
 import com.booboomx.todaynews.utils.RxUtils;
 
@@ -30,6 +31,7 @@ public class NewListPresenter extends BasePresenter<NewListView> {
 
         Subscription subscription= AppClient.getApiService().getNews(titleCode)
                 .compose(RxUtils.<ResultResponse<List<NewsBean>>>rxSchedulerHelper())
+                .retryWhen(new RetryWhenProcess(5))
                 .subscribe(new Subscriber<ResultResponse<List<NewsBean>>>() {
                     @Override
                     public void onStart() {
