@@ -18,6 +18,11 @@ android {
         }
     }
 }
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
@@ -48,5 +53,11 @@ dependencies {
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
 
     compile 'com.github.githubwing:DragPhotoView:1.0.1'
+
+
+    compile 'com.booboomx.commonbar:CommonBar:1.0'
+
+
+
 
 }

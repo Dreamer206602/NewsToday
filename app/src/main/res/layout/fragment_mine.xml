@@ -18,7 +18,7 @@
             >
             <include layout="@layout/mine_fragment_header"/>
 
-            <!--<include layout="@layout/mine_fragment_content"/>-->
+            <include layout="@layout/mine_fragment_content"/>
         </LinearLayout>
 
 

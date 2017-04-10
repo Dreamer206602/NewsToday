@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+    >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="3dp"
+            android:drawableTop="@drawable/favoriteicon_profile"
+            android:gravity="center"
+            android:text="@string/save"/>
+
+        <TextView
+            android:id="@+id/tv_theme"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="3dp"
+            android:drawableTop="@drawable/nighticon_profile"
+            android:gravity="center"
+            android:text="@string/nightTheme"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="3dp"
+            android:drawableTop="@drawable/setupicon_profile"
+            android:gravity="center"
+            android:text="@string/setting"/>
+
+
+    </LinearLayout>
+
+    <View
+        android:background="@color/gray_light"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+
+
+    <com.booboomx.commonbar.CustomTitlebar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:left_button_text="消息通知"
+        app:left_button_textColor="@color/black"
+        app:right_button_image="@drawable/setting_arrow"
+        app:show_line="true"/>
+
+    <com.booboomx.commonbar.CustomTitlebar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:left_button_text="离线"
+        app:left_button_textColor="@color/black"
+        app:right_button_image="@drawable/setting_arrow"/>
+
+    <com.booboomx.commonbar.CustomTitlebar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:left_button_text="活动"
+        app:left_button_textColor="@color/black"
+        app:right_button_image="@drawable/setting_arrow"/>
+
+    <com.booboomx.commonbar.CustomTitlebar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:left_button_text="商城"
+        app:left_button_textColor="@color/black"
+        app:right_button_image="@drawable/setting_arrow"/>
+
+
+</LinearLayout>
