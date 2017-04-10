@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
+import com.booboomx.todaynews.app.BaseApplication;
 import com.jaeger.library.StatusBarUtil;
 
 import butterknife.ButterKnife;
@@ -36,6 +37,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     private void initView(Bundle savedInstanceState) {
 
         setContentView(getLayoutId());
+        BaseApplication.getInstance().addActivity(this);
         mUnbinder=ButterKnife.bind(this);
 
         StatusBarUtil.setColor(this, Color.RED);
