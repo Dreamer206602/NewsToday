@@ -6,7 +6,7 @@ android {
     defaultConfig {
         applicationId "com.booboomx.todaynews"
         minSdkVersion 16
-        targetSdkVersion 23
+        targetSdkVersion 25
         versionCode 1
         versionName "1.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -56,6 +56,9 @@ dependencies {
 
 
     compile 'com.booboomx.commonbar:CommonBar:1.0'
+
+    compile 'com.android.support:support-dynamic-animation:25.3.1'
+
 
 
 

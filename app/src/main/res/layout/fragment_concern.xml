@@ -4,10 +4,21 @@
              android:layout_height="match_parent"
              tools:context="com.booboomx.todaynews.ui.fragment.ConcernFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment"/>
+
+     <com.booboomx.todaynews.widget.SpringScrollView
+         android:layout_width="match_parent"
+         android:layout_height="match_parent">
+
+
+         <com.booboomx.todaynews.widget.ParallaxRecyclerView
+             android:id="@+id/recyclerView"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"/>
+
+
+
+
+     </com.booboomx.todaynews.widget.SpringScrollView>
+
 
 </FrameLayout>
