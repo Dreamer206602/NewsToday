@@ -2,12 +2,16 @@ package com.booboomx.todaynews.ui.fragment;
 
 
 import android.support.v7.widget.LinearLayoutManager;
+import android.view.View;
 
 import com.booboomx.todaynews.R;
 import com.booboomx.todaynews.base.BaseFragment;
 import com.booboomx.todaynews.base.BasePresenter;
 import com.booboomx.todaynews.ui.adapter.ConcernAdapter;
+import com.booboomx.todaynews.utils.JumpUtils;
 import com.booboomx.todaynews.widget.ParallaxRecyclerView;
+import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.listener.OnItemClickListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,22 +54,43 @@ public class ConcernFragment extends BaseFragment {
         };
 
         mRecyclerView.setLayoutManager(manager);
-        datas.add("狼王-加内特");
-        datas.add("石佛-邓肯");
-        datas.add("小飞侠-科比");
-        datas.add("奥尼尔");
-        datas.add("托尼-帕克");
-        datas.add("面瘫-卡哇伊-莱昂纳德");
-        datas.add("千年老二-杜兰特");
-        datas.add("神龟-威少");
-        datas.add("保罗");
-        datas.add("加索尔");
-        datas.add("啵啵维奇");
-        datas.add("丹尼-格林");
+        datas.add("LinearSnapHelper-VERTICAL");
+        datas.add("LinearSnapHelper-HORIZONTAL");
+        datas.add("PagerSnapHelper-VERTICAL");
+        datas.add("PagerSnapHelper-HORIZONTAL");
 
 
         mAdapter=new ConcernAdapter(datas);
         mRecyclerView.setAdapter(mAdapter);
+
+        mRecyclerView.addOnItemTouchListener(new OnItemClickListener() {
+            @Override
+            public void onSimpleItemClick(BaseQuickAdapter adapter, View view, int position) {
+
+                switch (position){
+                    case 0:
+                        JumpUtils.go2LinearSnapHelperActivity(getContext(),"0");
+                        break;
+                    case 1:
+                        JumpUtils.go2LinearSnapHelperActivity(getContext(),"1");
+                        break;
+
+                    case 2:
+                        JumpUtils.go2PagerSnapHelperActivity(getContext(),"0");
+                        break;
+                    case 3:
+                        JumpUtils.go2PagerSnapHelperActivity(getContext(),"1");
+                        break;
+
+
+
+
+
+
+
+                }
+            }
+        });
 
 
 

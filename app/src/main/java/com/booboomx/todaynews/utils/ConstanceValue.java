@@ -1,10 +1,17 @@
 package com.booboomx.todaynews.utils;
 
+import com.booboomx.todaynews.app.BaseApplication;
+
+import java.io.File;
+
 /**
  * Created by booboomx on 17/4/4.
  */
 
 public interface ConstanceValue {
+
+    public static final String PATH_DATA = BaseApplication.getInstance().getCacheDir().getAbsolutePath() + File.separator + "data";
+    public static final String PATH_CACHE = PATH_DATA + File.separator + "NetCache";
 
     String DATA = "data";
     String ARTICLE_GENRE_GALLERY = "gallery";
@@ -18,6 +25,7 @@ public interface ConstanceValue {
     String HEIGHT="height";
     String LEFT="left";
     String TOP="top";
+    String TYPE="type";
     int THEME_LIGHT = 1;
     int THEME_NIGHT = 2;
     /**
