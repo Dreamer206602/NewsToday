@@ -45,6 +45,8 @@
         </activity>
         <activity android:name=".ui.activity.PagerSnapHelperActivity">
         </activity>
+        <activity android:name=".ui.activity.CustomSnapHelperActivity">
+        </activity>
     </application>
 
 </manifest>

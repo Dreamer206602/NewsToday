@@ -61,6 +61,11 @@ dependencies {
 
 
 
+    compile 'com.github.rubensousa:gravitysnaphelper:1.1'
+
+
+
+
 
 
 }

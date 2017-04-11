@@ -26,14 +26,16 @@ public class ConcernFragment extends BaseFragment {
 
     @BindView(R.id.recyclerView)
     ParallaxRecyclerView mRecyclerView;
+
     @Override
     public int getFragmentLayout() {
         return R.layout.fragment_concern;
     }
 
 
-    private List<String>datas=new ArrayList<>();
+    private List<String> datas = new ArrayList<>();
     private ConcernAdapter mAdapter;
+
     @Override
     public BasePresenter createPresenter() {
         return null;
@@ -44,7 +46,7 @@ public class ConcernFragment extends BaseFragment {
         super.lazyFetchData();
 
 
-        LinearLayoutManager manager=new LinearLayoutManager(getContext()){
+        LinearLayoutManager manager = new LinearLayoutManager(getContext()) {
 
             @Override
             public boolean canScrollVertically() {
@@ -60,39 +62,47 @@ public class ConcernFragment extends BaseFragment {
         datas.add("PagerSnapHelper-HORIZONTAL");
 
 
-        mAdapter=new ConcernAdapter(datas);
+        datas.add("CustomSnapHelper-CENTER");
+        datas.add("CustomSnapHelper-START");
+        datas.add("CustomSnapHelper-TOP");
+
+
+        mAdapter = new ConcernAdapter(datas);
         mRecyclerView.setAdapter(mAdapter);
 
         mRecyclerView.addOnItemTouchListener(new OnItemClickListener() {
             @Override
             public void onSimpleItemClick(BaseQuickAdapter adapter, View view, int position) {
 
-                switch (position){
+                switch (position) {
                     case 0:
-                        JumpUtils.go2LinearSnapHelperActivity(getContext(),"0");
+                        JumpUtils.go2LinearSnapHelperActivity(getContext(), "0");
                         break;
                     case 1:
-                        JumpUtils.go2LinearSnapHelperActivity(getContext(),"1");
+                        JumpUtils.go2LinearSnapHelperActivity(getContext(), "1");
                         break;
 
                     case 2:
-                        JumpUtils.go2PagerSnapHelperActivity(getContext(),"0");
+                        JumpUtils.go2PagerSnapHelperActivity(getContext(), "0");
                         break;
                     case 3:
-                        JumpUtils.go2PagerSnapHelperActivity(getContext(),"1");
+                        JumpUtils.go2PagerSnapHelperActivity(getContext(), "1");
                         break;
 
-
-
-
-
+                    case 4://center
+                        JumpUtils.go2CustomSnapHelperActivity(getContext(), "1");
+                        break;
+                    case 5://start
+                        JumpUtils.go2CustomSnapHelperActivity(getContext(), "2");
+                        break;
+                    case 6://top
+                        JumpUtils.go2CustomSnapHelperActivity(getContext(), "3");
+                        break;
 
 
                 }
             }
         });
-
-
 
 
     }
