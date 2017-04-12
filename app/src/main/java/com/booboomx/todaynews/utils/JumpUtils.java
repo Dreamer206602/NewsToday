@@ -8,6 +8,7 @@ import com.booboomx.todaynews.ui.activity.LinearSnapHelperActivity;
 import com.booboomx.todaynews.ui.activity.MainActivity;
 import com.booboomx.todaynews.ui.activity.NewsDetailActivity;
 import com.booboomx.todaynews.ui.activity.PagerSnapHelperActivity;
+import com.booboomx.todaynews.ui.activity.ScrollZoomLayoutManagerActivity;
 
 /**
  * Created by booboomx on 17/4/2.
@@ -52,6 +53,13 @@ public class JumpUtils {
         Intent intent = new Intent();
         intent.setClass(context, CustomSnapHelperActivity.class);
         intent.putExtra(ConstanceValue.TYPE, type);
+        context.startActivity(intent);
+    }
+
+    public static void go2ScrollZoomLayoutManagerActivity(Context context,String type) {
+        Intent intent = new Intent();
+        intent.setClass(context, ScrollZoomLayoutManagerActivity.class);
+        intent.putExtra(ConstanceValue.TYPE,type);
         context.startActivity(intent);
     }
 

@@ -47,6 +47,8 @@
         </activity>
         <activity android:name=".ui.activity.CustomSnapHelperActivity">
         </activity>
+        <activity android:name=".ui.activity.ScrollZoomLayoutManagerActivity">
+        </activity>
     </application>
 
 </manifest>

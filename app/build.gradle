@@ -28,9 +28,6 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.google.code.gson:gson:2.4'
     compile 'com.squareup.okhttp:okhttp:2.4.0'
-//    compile 'com.squareup.okio:okio:1.5.0'
-//
-
     compile 'com.squareup.retrofit2:retrofit:2.0.2'
     compile 'com.squareup.okhttp3:logging-interceptor:3.1.2'
     compile 'com.squareup.retrofit2:converter-gson:2.0.2'
@@ -51,17 +48,13 @@ dependencies {
     compile 'com.jaeger.statusbaruitl:library:1.3.6'
     compile 'com.android.support:support-v4:25.3.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
-
     compile 'com.github.githubwing:DragPhotoView:1.0.1'
-
-
     compile 'com.booboomx.commonbar:CommonBar:1.0'
-
     compile 'com.android.support:support-dynamic-animation:25.3.1'
-
-
-
+//    compile 'rouchuan.customlayoutmanager:customlayoutmanager:1.0.2'
     compile 'com.github.rubensousa:gravitysnaphelper:1.1'
+
+
 
 
 

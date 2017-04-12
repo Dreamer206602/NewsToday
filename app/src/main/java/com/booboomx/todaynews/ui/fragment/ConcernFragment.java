@@ -67,6 +67,12 @@ public class ConcernFragment extends BaseFragment {
         datas.add("CustomSnapHelper-TOP");
 
 
+        datas.add("ScrollZoomLayoutManager");
+        datas.add("CircleLayoutManager");
+        datas.add("CircleZoomLayoutManager");
+        datas.add("GalleryLayoutManager");
+
+
         mAdapter = new ConcernAdapter(datas);
         mRecyclerView.setAdapter(mAdapter);
 
@@ -97,6 +103,19 @@ public class ConcernFragment extends BaseFragment {
                         break;
                     case 6://top
                         JumpUtils.go2CustomSnapHelperActivity(getContext(), "3");
+                        break;
+
+                    case 7://ScrollZoomLayoutManager
+                        JumpUtils.go2ScrollZoomLayoutManagerActivity(getContext(), "1");
+                        break;
+                    case 8://CircleLayoutManager
+                        JumpUtils.go2ScrollZoomLayoutManagerActivity(getContext(), "2");
+                        break;
+                    case 9://CircleZoomLayoutManager
+                        JumpUtils.go2ScrollZoomLayoutManagerActivity(getContext(), "3");
+                        break;
+                    case 10://GalleryLayoutManager
+                        JumpUtils.go2ScrollZoomLayoutManagerActivity(getContext(), "4");
                         break;
 
 
