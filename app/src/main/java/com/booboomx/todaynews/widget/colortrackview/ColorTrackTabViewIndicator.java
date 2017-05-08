@@ -16,7 +16,7 @@ import android.widget.LinearLayout;
 
 import com.booboomx.todaynews.R;
 import com.booboomx.todaynews.theme.ColorUiInterface;
-import com.booboomx.todaynews.utils.ViewAttributeUtil;
+import com.booboomx.todaynews.theme.util.ViewAttributeUtil;
 
 import java.util.ArrayList;
 import java.util.List;

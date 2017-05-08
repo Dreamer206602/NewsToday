@@ -11,10 +11,11 @@
         android:id="@+id/indicator"
         android:layout_width="match_parent"
         android:layout_height="45dp"
+        app:ctTabTextColor="?attr/font_color"
         android:background="@color/white_translucent_20"
         app:ctMode="scrollable"
+        app:isColorUi="true"
         app:ctTabSelectedTextColor="@color/ssxinhongse1"
-        app:ctTabTextColor="@color/black"
         app:ctTabTextSize="16sp"
         app:ctTabWidth="60dp"
         />

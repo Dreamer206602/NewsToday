@@ -3,12 +3,12 @@
               xmlns:app="http://schemas.android.com/apk/res-auto"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
+              app:isColorUi="true"
               android:orientation="vertical"
     >
-
-
     <LinearLayout
-        android:background="@color/white"
+        android:background="?attr/main_bg"
+        app:isColorUi="true"
         android:paddingTop="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -22,6 +22,8 @@
             android:drawablePadding="3dp"
             android:drawableTop="@drawable/favoriteicon_profile"
             android:gravity="center"
+            android:textColor="?attr/font_color"
+            app:isColorUi="true"
             android:text="@string/save"/>
 
         <TextView
@@ -32,6 +34,8 @@
             android:drawablePadding="3dp"
             android:drawableTop="@drawable/nighticon_profile"
             android:gravity="center"
+            android:textColor="?attr/font_color"
+            app:isColorUi="true"
             android:text="@string/nightTheme"/>
 
         <TextView
@@ -41,18 +45,23 @@
             android:drawablePadding="3dp"
             android:drawableTop="@drawable/setupicon_profile"
             android:gravity="center"
+            android:textColor="?attr/font_color"
+            app:isColorUi="true"
             android:text="@string/setting"/>
 
 
     </LinearLayout>
 
     <View
-        android:background="@color/gray_light"
+        android:background="?attr/divider_black"
+        app:isColorUi="true"
         android:layout_width="match_parent"
         android:layout_height="10dp"/>
 
 
     <com.booboomx.commonbar.CustomTitlebar
+        android:textColor="?attr/font_color"
+        app:isColorUi="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:left_button_text="消息通知"
@@ -61,6 +70,8 @@
         app:show_line="true"/>
 
     <com.booboomx.commonbar.CustomTitlebar
+        android:textColor="?attr/font_color"
+        app:isColorUi="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:left_button_text="离线"
@@ -68,6 +79,8 @@
         app:right_button_image="@drawable/setting_arrow"/>
 
     <com.booboomx.commonbar.CustomTitlebar
+        android:textColor="?attr/font_color"
+        app:isColorUi="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:left_button_text="活动"
@@ -75,6 +88,8 @@
         app:right_button_image="@drawable/setting_arrow"/>
 
     <com.booboomx.commonbar.CustomTitlebar
+        android:textColor="?attr/font_color"
+        app:isColorUi="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:left_button_text="商城"

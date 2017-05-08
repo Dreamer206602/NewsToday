@@ -1,4 +1,4 @@
-package com.booboomx.todaynews.utils;
+package com.booboomx.todaynews.theme.util;
 
 import android.content.Context;
 import android.content.SharedPreferences;

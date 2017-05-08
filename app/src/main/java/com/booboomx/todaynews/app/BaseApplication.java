@@ -3,7 +3,7 @@ package com.booboomx.todaynews.app;
 import android.app.Activity;
 import android.app.Application;
 
-import com.booboomx.todaynews.utils.SharedPreferencesMgr;
+import com.booboomx.todaynews.theme.util.SharedPreferencesMgr;
 
 import java.util.LinkedList;
 import java.util.List;

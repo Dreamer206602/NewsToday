@@ -3,17 +3,15 @@
                                     xmlns:app="http://schemas.android.com/apk/res-auto"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-
                                     android:layout_marginTop="3dp"
                                     android:layout_marginLeft="8dp"
                                     android:layout_marginRight="8dp"
 
-                                    app:cardBackgroundColor="@color/white"
+                                    app:isColorUi="true"
+                                    app:cardBackgroundColor="?attr/main_bg"
                                     app:contentPadding="8dp"
                                     app:cardCornerRadius="10dp"
                                     app:cardElevation="10dp"
-
-
 
                                     android:id="@+id/cardView"
                                     app:cardPreventCornerOverlap="true"
@@ -33,7 +31,7 @@
             android:layout_marginLeft="5dp"
             android:layout_marginTop="5dp"
             android:text="我是今日头条"
-            android:textColor="@color/black"
+            android:textColor="?attr/font_color"
             android:textSize="16sp"/>
 
         <LinearLayout
@@ -89,7 +87,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="中新网移动版"
-                android:textColor="@color/black"
+                android:textColor="?attr/font_color2"
                 android:textSize="14sp"
                 />
 
@@ -100,7 +98,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:text="1020评论"
-                android:textColor="@color/black"
+                android:textColor="?attr/font_color2"
+
                 android:textSize="14sp"
                 />
 
@@ -111,7 +110,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:text="5分钟前"
-                android:textColor="@color/black"
+                android:textColor="?attr/font_color2"
                 android:textSize="14sp"
                 />
         </LinearLayout>

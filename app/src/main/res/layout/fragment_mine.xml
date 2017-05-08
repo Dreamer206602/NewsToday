@@ -1,9 +1,12 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:tools="http://schemas.android.com/tools"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="?attr/main_bg"
               android:orientation="vertical"
-             tools:context="com.booboomx.todaynews.ui.fragment.MineFragment">
+              app:isColorUi="true"
+              tools:context="com.booboomx.todaynews.ui.fragment.MineFragment">
 
 
     <com.booboomx.todaynews.widget.HeaderZoomLayout
@@ -16,17 +19,14 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             >
+
             <include layout="@layout/mine_fragment_header"/>
 
             <include layout="@layout/mine_fragment_content"/>
         </LinearLayout>
 
 
-
-
     </com.booboomx.todaynews.widget.HeaderZoomLayout>
-
-
 
 
 </LinearLayout>

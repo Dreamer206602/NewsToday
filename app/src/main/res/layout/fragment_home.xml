@@ -20,8 +20,9 @@
             android:gravity="center_vertical"
             android:maxLines="1"
             android:text="@string/feed_search_tip"
-            android:textColor="@color/black"
-            android:textSize="14sp"/>
+            android:textColor="?attr/font_color"
+            android:textSize="14sp"
+            app:isColorUi="true"/>
     </LinearLayout>
 
     <RelativeLayout
@@ -29,40 +30,37 @@
         android:layout_height="35dp">
 
 
-
-
-        <!--            android:background="?attr/main_bg"-->
-        <!--            app:ctTabTextColor="?attr/font_color"-->
         <com.booboomx.todaynews.widget.colortrackview.ColorTrackTabViewIndicator
-            android:background="@color/white_translucent"
             android:id="@+id/indicator"
-            app:ctTabTextColor="@color/black"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
+            android:background="?attr/main_bg"
             app:ctMode="scrollable"
             app:ctTabSelectedTextColor="@color/ssxinhongse1"
+            app:ctTabTextColor="?attr/font_color"
             app:ctTabTextSize="16sp"
             app:ctTabWidth="50dp"
             app:isColorUi="true"/>
 
         <ImageView
+            app:isColorUi="true"
             android:id="@+id/iv_category"
             android:layout_width="50dp"
             android:layout_height="match_parent"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:background="@drawable/shadow_add_titlebar_new"
+            android:background="?attr/main_bg"
             android:paddingLeft="5dp"
             android:scaleType="center"
             android:src="@drawable/ic_category_expand"
             />
     </RelativeLayout>
 
-    <!--        android:background="?attr/divider_light_grey"-->
     <View
+        android:background="?attr/divider_light_grey"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         app:isColorUi="true"

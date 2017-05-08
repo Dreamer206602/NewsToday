@@ -14,7 +14,6 @@ import com.booboomx.todaynews.widget.CountDownView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 import butterknife.Unbinder;
 
 /**
@@ -71,12 +70,13 @@ public class WelcomeActivity extends FragmentActivity {
 
 
 
-    @OnClick(R.id.countDownView)
-    public void Click(){
-        JumpUtils.go2MainActivity(WelcomeActivity.this);
-        finish();
-
-    }
+//    @OnClick(R.id.countDownView)
+//    public void Click(){
+//
+//        JumpUtils.go2MainActivity(WelcomeActivity.this);
+//        finish();
+//
+//    }
 
 
     @Override

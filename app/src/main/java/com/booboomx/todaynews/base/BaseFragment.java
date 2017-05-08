@@ -8,8 +8,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.booboomx.todaynews.model.Notice;
+import com.booboomx.todaynews.utils.RxBus;
+
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+import rx.Observable;
 
 /**
  * Created by booboomx on 17/4/2.
@@ -199,17 +203,27 @@ public abstract class BaseFragment<P extends BasePresenter> extends Fragment {
 
     private void initEvent() {
 
-
     }
-
-
-
 
     protected  void initView(LayoutInflater inflater){
 
-
-
     }
+
+
+    /**
+     * 注册事件通知
+     */
+    public Observable<Notice> toObservable() {
+        return RxBus.getDefault().toObservable(Notice.class);
+    }
+
+    /**
+     * 发送消息
+     */
+    public void post(Notice msg) {
+        RxBus.getDefault().post(msg);
+    }
+
 
 
 

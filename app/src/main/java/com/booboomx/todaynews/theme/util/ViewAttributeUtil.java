@@ -1,4 +1,5 @@
-package com.booboomx.todaynews.utils;
+package com.booboomx.todaynews.theme.util;
+
 
 import android.content.res.Resources;
 import android.content.res.TypedArray;
@@ -8,12 +9,14 @@ import android.widget.TextView;
 
 import com.booboomx.todaynews.app.BaseApplication;
 import com.booboomx.todaynews.theme.ColorUiInterface;
+import com.booboomx.todaynews.utils.ConstanceValue;
+
 
 /**
- * Created by booboomx on 17/4/4.
+ * Created by chengli on 15/6/8.
  */
-
 public class ViewAttributeUtil {
+
     public static int getAttributeValue(AttributeSet attr, int paramInt) {
         int value = -1;
         int count = attr.getAttributeCount();

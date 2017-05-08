@@ -10,7 +10,9 @@
     android:layout_marginLeft="8dp"
     android:layout_marginRight="8dp"
 
-    app:cardBackgroundColor="@color/white"
+    app:isColorUi="true"
+    app:cardBackgroundColor="?attr/main_bg"
+
     app:contentPadding="8dp"
     app:cardCornerRadius="10dp"
     app:cardElevation="10dp"
@@ -35,7 +37,6 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="5dp"
-            android:background="@color/white"
             android:gravity="center"
             android:orientation="horizontal"
             >
@@ -63,7 +64,8 @@
                 android:maxLines="1"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textColor="@color/black"
+
+                android:textColor="?attr/font_color"
                 tools:text="世锋日上"/>
 
 
@@ -74,9 +76,8 @@
                 android:layout_weight="1"
                 android:drawableLeft="@drawable/ic_action_comment"
                 android:drawablePadding="2dp"
-                android:textColor="@color/black"
+                android:textColor="?attr/font_color"
                 tools:text="217"/>
-
 
             <ImageView
                 android:id="@+id/ivMore"
