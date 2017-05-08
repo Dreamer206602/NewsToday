@@ -72,6 +72,10 @@ public class ConcernFragment extends BaseFragment {
         datas.add("CircleZoomLayoutManager");
         datas.add("GalleryLayoutManager");
 
+        datas.add("New-GalleryLayoutManager");
+
+
+
 
         mAdapter = new ConcernAdapter(datas);
         mRecyclerView.setAdapter(mAdapter);
@@ -116,6 +120,11 @@ public class ConcernFragment extends BaseFragment {
                         break;
                     case 10://GalleryLayoutManager
                         JumpUtils.go2ScrollZoomLayoutManagerActivity(getContext(), "4");
+                        break;
+
+
+                    case 11:// New-GalleryLayoutManager
+                        JumpUtils.go2GalleryLayoutManagerActivity(getContext());
                         break;
 
 

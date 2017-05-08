@@ -3,7 +3,9 @@ package com.booboomx.todaynews.utils;
 import android.content.Context;
 import android.content.Intent;
 
+import com.booboomx.todaynews.ui.activity.ChannelActivity;
 import com.booboomx.todaynews.ui.activity.CustomSnapHelperActivity;
+import com.booboomx.todaynews.ui.activity.GalleryLayoutManagerActivity;
 import com.booboomx.todaynews.ui.activity.LinearSnapHelperActivity;
 import com.booboomx.todaynews.ui.activity.MainActivity;
 import com.booboomx.todaynews.ui.activity.NewsDetailActivity;
@@ -56,10 +58,21 @@ public class JumpUtils {
         context.startActivity(intent);
     }
 
-    public static void go2ScrollZoomLayoutManagerActivity(Context context,String type) {
+    public static void go2ScrollZoomLayoutManagerActivity(Context context, String type) {
         Intent intent = new Intent();
         intent.setClass(context, ScrollZoomLayoutManagerActivity.class);
-        intent.putExtra(ConstanceValue.TYPE,type);
+        intent.putExtra(ConstanceValue.TYPE, type);
+        context.startActivity(intent);
+    }
+
+    public static void go2GalleryLayoutManagerActivity(Context context) {
+        Intent intent = new Intent();
+        intent.setClass(context, GalleryLayoutManagerActivity.class);
+        context.startActivity(intent);
+    }
+    public static  void go2ChannelActivity(Context context){
+        Intent intent=new Intent();
+        intent.setClass(context, ChannelActivity.class);
         context.startActivity(intent);
     }
 

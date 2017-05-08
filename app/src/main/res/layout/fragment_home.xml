@@ -58,7 +58,6 @@
             android:paddingLeft="5dp"
             android:scaleType="center"
             android:src="@drawable/ic_category_expand"
-            app:isColorUi="true"
             />
     </RelativeLayout>
 

@@ -12,6 +12,7 @@ import com.booboomx.todaynews.base.BaseFragment;
 import com.booboomx.todaynews.base.BasePresenter;
 import com.booboomx.todaynews.ui.adapter.TitlePagerAdapter;
 import com.booboomx.todaynews.utils.ConstanceValue;
+import com.booboomx.todaynews.utils.JumpUtils;
 import com.booboomx.todaynews.widget.colortrackview.ColorTrackTabViewIndicator;
 import com.booboomx.todaynews.widget.colortrackview.ColorTrackView;
 
@@ -103,7 +104,7 @@ public class HomeFragment extends BaseFragment {
 
         switch (view.getId()){
             case R.id.iv_category:
-
+                JumpUtils.go2ChannelActivity(getContext());
                 break;
         }
 

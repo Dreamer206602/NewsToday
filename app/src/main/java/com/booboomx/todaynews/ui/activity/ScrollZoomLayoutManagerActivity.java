@@ -34,11 +34,6 @@ public class ScrollZoomLayoutManagerActivity extends BaseActivity {
     private String type;
 
 
-//    private ScrollZoomLayoutManager mScrollZoomLayoutManager;
-//    private CircleLayoutManager mCircleLayoutManager;
-//    private GalleryLayoutManager mGalleryLayoutManager;
-//    private CircleZoomLayoutManager mCircleZoomLayoutManager;
-
     private CustomLayoutManager mManager;
 
     @Override
