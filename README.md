@@ -2,7 +2,7 @@
 
 
 ## APK
-[点击下载](https://fir.im/jtk8?release_id=58e8abb1548b7a393f000101)
+[点击下载](https://fir.im/hrwj)
 
 # 项目截图
 ![](/screenshot/01.png)

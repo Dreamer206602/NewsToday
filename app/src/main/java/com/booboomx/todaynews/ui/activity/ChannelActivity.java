@@ -102,7 +102,6 @@ public class ChannelActivity extends BaseActivity implements OnChannelDragListen
 
     @Override
     public void onItemMove(int startPos, int endPos) {
-
         Channel channel = mDatas.get(startPos);
         //先删除之前的位置
         mDatas.remove(startPos);

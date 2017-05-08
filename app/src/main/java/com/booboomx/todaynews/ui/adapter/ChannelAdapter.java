@@ -396,7 +396,6 @@ public class ChannelAdapter extends BaseMultiItemQuickAdapter<Channel, BaseViewH
                 boolean isVis = imgEdit.getTag() == null ? false : (boolean) imgEdit.getTag();
                 imgEdit.setVisibility(isEdit && isVis ? View.VISIBLE : View.INVISIBLE);
             }
-
         }
 
     }
